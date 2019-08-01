@@ -1,0 +1,29 @@
+{
+  "name": "boilerplate-sass",
+  "version": "1.0.0",
+  "description": "An app that uses github API to display information of profiles when searched by usernames",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w ./assets/stylesheets/style.scss ./assets/stylesheets/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaharshivam/Boilerplate-sass.git"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "Sass",
+    "Flexbox",
+    "Grid"
+  ],
+  "author": "Shivam Chahar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaharshivam/Boilerplate-sass/issues"
+  },
+  "homepage": "https://github.com/chaharshivam/Boilerplate-sass#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
