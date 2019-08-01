@@ -1,0 +1,71 @@
+.search-profile {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    // visibility: hidden;
+    form {
+        @include border-radius(0.5rem);
+        display: flex;
+        background: white;
+        border: 0.25rem solid white;
+    }
+}
+
+input[type="text"] {
+    @include border-radius(0.25rem);
+    font-family: $imprima;
+    font-size: 2rem;
+    padding: 1rem;
+
+    &::-webkit-input-placeholder {
+        font-family: $imprima;
+    }
+}
+
+input[type="text"]:focus {
+    outline: 0.25rem solid rgba($darkGold, 0.7);
+}
+
+input[type="submit"] {
+    @include border-radius(0.25rem);
+    background: $smoke;
+    color: white;
+    font-size: 1.25rem;
+    padding: 0 1.5rem;
+    &:hover {
+        background: $black;
+    }
+}
+
+// User view
+
+.avatar, .info {
+    width: 40%;
+}
+
+.avatar {
+    color: white;
+    box-shadow: $shadow;
+    img {
+        border: 0.25rem solid white;
+        @include border-radius(0.25rem);
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    .name {
+        background: $darkGold;
+        padding: 0.5rem;
+        text-align: center;
+        font-weight: bold;
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+    }
+}
+
+.info {
+    color: white;
+    font-size: 1.25rem;
+}

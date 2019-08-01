@@ -1,0 +1,235 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*My reset*/
+*::before, *, *::after {
+  box-sizing: border-box; }
+
+a {
+  display: inline-block;
+  text-decoration: none; }
+
+img {
+  width: 100%;
+  height: auto;
+  font-size: 0;
+  vertical-align: top; }
+
+button,
+input,
+textarea {
+  box-shadow: none;
+  outline: 0;
+  border: 0; }
+
+/*Base styles*/
+html {
+  font-size: 16px;
+  line-height: 1.5; }
+
+body {
+  line-height: 1.5; }
+
+h1 {
+  font-size: 3rem; }
+
+h2 {
+  font-size: 2.5rem; }
+
+h3 {
+  font-size: 2rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1rem; }
+
+h6 {
+  font-size: 0.75rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; }
+
+p {
+  font-size: 1rem; }
+
+/*Align text*/
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+/*Flex properties*/
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.align-start {
+  display: flex;
+  align-items: flex-start; }
+
+[class*="grid-"] {
+  display: grid;
+  grid-gap: 15px; }
+
+.grid-col-4 {
+  grid-template-columns: repeat(4, 1fr); }
+
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr); }
+
+.grid-col-2 {
+  grid-template-columns: repeat(2, 1fr); }
+
+.grid-col-1 {
+  grid-template-columns: repeat(1, 1fr); }
+
+/* Center child*/
+.center-child {
+  display: grid;
+  place-items: center; }
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 3rem; }
+
+body {
+  font-family: "Imprima", sans-serif;
+  background: #051014;
+  line-height: 1.5; }
+
+.logo {
+  color: white;
+  border-bottom: 0.25rem solid #e0aa2a;
+  font-family: "Damion", cursive;
+  letter-spacing: 0.5rem; }
+
+.theme-button {
+  font-size: 2rem;
+  background: transparent;
+  padding: 0.5rem;
+  color: white; }
+
+.search-profile {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%; }
+  .search-profile form {
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    background: white;
+    border: 0.25rem solid white; }
+
+input[type="text"] {
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  font-family: "Imprima", sans-serif;
+  font-size: 2rem;
+  padding: 1rem; }
+  input[type="text"]::-webkit-input-placeholder {
+    font-family: "Imprima", sans-serif; }
+
+input[type="text"]:focus {
+  outline: 0.25rem solid rgba(224, 170, 42, 0.7); }
+
+input[type="submit"] {
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  background: #0D0A0B;
+  color: white;
+  font-size: 1.25rem;
+  padding: 0 1.5rem; }
+  input[type="submit"]:hover {
+    background: #051014; }
+
+.avatar, .info {
+  width: 40%; }
+
+.avatar {
+  color: white;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); }
+  .avatar img {
+    border: 0.25rem solid white;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; }
+  .avatar .name {
+    background: #e0aa2a;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem; }
+
+.info {
+  color: white;
+  font-size: 1.25rem; }
