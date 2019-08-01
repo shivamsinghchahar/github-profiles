@@ -1,19 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Homepage</title>
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="./assets/stylesheets/style.css">
-    </head>
-    <body>
-        <!-- Header -->
-        <header></header>
-        <!-- Main -->
-        <main></main>
-        <!-- Footer -->
-        <footer></footer>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Github Profiles</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/stylesheets/style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Damion|Imprima&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8bc5acd820.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="wrapper flex-between">
+                <a href="#">
+                    <h1 class="logo">GitHub Profiles</h1>
+                </a>
+                <button class="theme-button">
+                    <span class="theme">
+                        <small>&#x1f315;</small>
+                    </span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- Main -->
+    <main>
+        <section class="user-profile">
+            <div class="wrapper">
+                <div class="search-profile flex-center">
+                    <form action="#" method="get">
+                        <input id="user-input" type="text" placeholder="username">
+                        <input type="submit" value="&#x1f50e;">
+                    </form>
+                </div>
+                <div class="user-container grid-col-2">
+                    <aside class="user-info grid-col-1">
+                        <div class="avatar">
+                            <img src="#" alt="Picture of user">
+                            <p class="name"></p>
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li class="flex-between">
+                                    <span>
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span id="username"></span>
+                                </li>
+                                <li class="flex-between">
+                                    <span>
+                                        <i class="fas fa-users"></i>
+                                    </span>
+                                    <span id="followers"></span>
+                                </li>
+                                <li class="flex-between">
+                                    <span>
+                                        <i class="fas fa-book"></i>
+                                    </span>
+                                    <span id="repos"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                    <aside class="user-repos">
+
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer></footer>
+    <script src="./assets/scripts/profile.js"></script>
+</body>
+
 </html>
