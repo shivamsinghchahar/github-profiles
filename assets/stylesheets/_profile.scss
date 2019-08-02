@@ -1,15 +1,11 @@
 .search-profile {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    top: 50%;
-    bottom: 50%;
-    // visibility: hidden;
+    margin-bottom: 1rem;
     form {
         @include border-radius(0.5rem);
         display: flex;
         background: white;
         border: 0.25rem solid white;
+        box-shadow: $shadow;
     }
 }
 
@@ -18,7 +14,7 @@ input[type="text"] {
     font-family: $imprima;
     font-size: 2rem;
     padding: 1rem;
-
+    box-shadow: $shadow;
     &::-webkit-input-placeholder {
         font-family: $imprima;
     }

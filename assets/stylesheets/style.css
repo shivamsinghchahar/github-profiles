@@ -166,13 +166,12 @@ body {
   background: transparent;
   padding: 0.5rem;
   color: white; }
+  .theme-button i {
+    font-size: 2.5rem;
+    color: #e0aa2a; }
 
 .search-profile {
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  top: 50%;
-  bottom: 50%; }
+  margin-bottom: 1rem; }
   .search-profile form {
     -webkit-border-radius: 0.5rem;
     -moz-border-radius: 0.5rem;
@@ -180,7 +179,8 @@ body {
     border-radius: 0.5rem;
     display: flex;
     background: white;
-    border: 0.25rem solid white; }
+    border: 0.25rem solid white;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); }
 
 input[type="text"] {
   -webkit-border-radius: 0.25rem;
@@ -189,7 +189,8 @@ input[type="text"] {
   border-radius: 0.25rem;
   font-family: "Imprima", sans-serif;
   font-size: 2rem;
-  padding: 1rem; }
+  padding: 1rem;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); }
   input[type="text"]::-webkit-input-placeholder {
     font-family: "Imprima", sans-serif; }
 
