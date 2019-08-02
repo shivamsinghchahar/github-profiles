@@ -6,7 +6,7 @@ const NAME = document.querySelector('.avatar p');
 const USR = document.querySelector('#username');
 const FOLLOW = document.querySelector('#followers');
 const REPOS = document.querySelector('#repos');
-
+const SEARCHBAR = document.querySelector('.search-profile');
 // Hide the container class of user
 const CONTAINER = document.querySelector('.user-container');
 CONTAINER.style.visibility = 'hidden';
@@ -42,6 +42,8 @@ function searchUser (event) {
     } else {
         console.log(url);
         fetchUser(USERNAME.value);
+        USERNAME.value = '';
+        // SEARCHBAR.style.visibility = 'hidden';
     }
 }
 
