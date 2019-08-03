@@ -21,29 +21,45 @@ function drawUser (user) {
     CONTAINER.style.visibility = 'visible';
 }
 
+// function fetchUser (username) {
+//     console.log(url + username);
+    
+//     const XHR = new XMLHttpRequest();
+//     // Open request for the particular user
+//     XHR.open("GET", `${url}${username}`);
+    
+//     XHR.onloadstart = () => console.log('Fetching user data...');
+//     XHR.onload = () => {
+//         drawUser( JSON.parse(XHR.response) );
+//     };
+//     XHR.onloadend = () => console.log('User fetched successfully!!');
+//     XHR.send();
+// }
+
 function fetchUser (username) {
-    console.log(url + username);
-    
-    const XHR = new XMLHttpRequest();
-    // Open request for the particular user
-    XHR.open("GET", `${url}${username}`);
-    
-    XHR.onloadstart = () => console.log('Fetching user data...');
-    XHR.onload = () => {
-        drawUser( JSON.parse(XHR.response) );
-    };
-    XHR.onloadend = () => console.log('User fetched successfully!!');
-    XHR.send();
+    return new Promise(
+        (resolve, reject) => {
+            const XHR = new XMLHttpRequest();
+
+            XHR.open("GET", `${url}${username}`);
+
+            XHR.onload = () => resolve( new Response (XHR.response) );
+            XHR.onerror = () => reject('Could not fetch data!!');
+
+            XHR.send();
+        }
+    );
 }
 
 function searchUser (event) {
     if (!USERNAME.value) {
         alert('Username can\'t be empty!!');
     } else {
-        console.log(url);
-        fetchUser(USERNAME.value);
+        fetchUser(USERNAME.value)
+        .then( res => res.json() )
+        .then( data => drawUser(data));
+        fetchUserInfo(USERNAME.value);
         USERNAME.value = '';
-        // SEARCHBAR.style.visibility = 'hidden';
     }
 }
 
