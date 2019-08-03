@@ -146,14 +146,15 @@ p {
   place-items: center; }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1050px;
   margin: 0 auto;
   padding: 2rem 3rem; }
 
 body {
   font-family: "Imprima", sans-serif;
   background: #051014;
-  line-height: 1.5; }
+  line-height: 1.5;
+  background-image: url(../images/overlay.png); }
 
 .logo {
   color: white;
@@ -170,8 +171,12 @@ body {
     font-size: 2.5rem;
     color: #e0aa2a; }
 
+.user-container {
+  grid-template-columns: 1fr 3fr;
+  grid-column-gap: 2.5rem; }
+
 .search-profile {
-  margin-bottom: 1rem; }
+  margin-bottom: 1.5rem; }
   .search-profile form {
     -webkit-border-radius: 0.5rem;
     -moz-border-radius: 0.5rem;
@@ -188,8 +193,8 @@ input[type="text"] {
   -ms-border-radius: 0.25rem;
   border-radius: 0.25rem;
   font-family: "Imprima", sans-serif;
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); }
   input[type="text"]::-webkit-input-placeholder {
     font-family: "Imprima", sans-serif; }
@@ -208,9 +213,6 @@ input[type="submit"] {
   padding: 0 1.5rem; }
   input[type="submit"]:hover {
     background: #051014; }
-
-.avatar, .info {
-  width: 40%; }
 
 .avatar {
   color: white;
@@ -234,3 +236,26 @@ input[type="submit"] {
 .info {
   color: white;
   font-size: 1.25rem; }
+
+.user-repos li {
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  border: 0.25rem solid white;
+  padding: 0.5rem;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  color: white; }
+
+.repo-title {
+  font-size: 1rem;
+  padding-bottom: 0.25rem; }
+
+.stars, .forks {
+  padding: 0 1rem 0 0; }
+  .stars i, .forks i {
+    color: #e0aa2a; }
+
+.repo-description {
+  padding-top: 0.25rem;
+  font-size: 0.8rem; }

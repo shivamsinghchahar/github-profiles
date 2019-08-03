@@ -1,5 +1,10 @@
+.user-container {
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 2.5rem;
+}
+
 .search-profile {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     form {
         @include border-radius(0.5rem);
         display: flex;
@@ -12,8 +17,8 @@
 input[type="text"] {
     @include border-radius(0.25rem);
     font-family: $imprima;
-    font-size: 2rem;
-    padding: 1rem;
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
     box-shadow: $shadow;
     &::-webkit-input-placeholder {
         font-family: $imprima;
@@ -36,10 +41,6 @@ input[type="submit"] {
 }
 
 // User view
-
-.avatar, .info {
-    width: 40%;
-}
 
 .avatar {
     color: white;
@@ -64,4 +65,31 @@ input[type="submit"] {
 .info {
     color: white;
     font-size: 1.25rem;
+}
+
+.user-repos {
+    li {
+        @include border-radius(0.25rem);
+        border: 0.25rem solid white;
+        padding: 0.5rem;
+        box-shadow: $shadow;
+        color: white;
+    }
+}
+
+.repo-title {
+    font-size: 1rem;
+    padding-bottom: 0.25rem;
+}
+
+.stars, .forks {
+    padding: 0 1rem 0 0;
+    i {
+        color: $darkGold;
+    }
+}
+
+.repo-description {
+    padding-top: 0.25rem;
+    font-size: 0.8rem;
 }

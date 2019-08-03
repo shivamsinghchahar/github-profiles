@@ -1,5 +1,5 @@
 .wrapper {
-    max-width: 1200px;
+    max-width: 1050px;
     margin: 0 auto;
     padding: 2rem 3rem;
 }
@@ -8,4 +8,5 @@ body {
     font-family: $imprima;
     background: $black;
     line-height: 1.5;
+    background-image: url(../images/overlay.png);
 }
