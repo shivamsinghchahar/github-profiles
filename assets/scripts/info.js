@@ -6,7 +6,8 @@ const DES = document.querySelectorAll('.repo-description');
 function fetchUserInfo (username) {
     return fetch(`https://api.github.com/users/${username}/repos`)
     .then( res => res.json() )
-    .then( res => topFour(res) );
+    .then( res => topFour(res) )
+    .catch( err => console.log(err) );
 }
 
 function drawInfo (data) {
