@@ -21,21 +21,6 @@ function drawUser (user) {
     CONTAINER.style.visibility = 'visible';
 }
 
-// function fetchUser (username) {
-//     console.log(url + username);
-    
-//     const XHR = new XMLHttpRequest();
-//     // Open request for the particular user
-//     XHR.open("GET", `${url}${username}`);
-    
-//     XHR.onloadstart = () => console.log('Fetching user data...');
-//     XHR.onload = () => {
-//         drawUser( JSON.parse(XHR.response) );
-//     };
-//     XHR.onloadend = () => console.log('User fetched successfully!!');
-//     XHR.send();
-// }
-
 function fetchUser (username) {
     return new Promise(
         (resolve, reject) => {
@@ -44,7 +29,7 @@ function fetchUser (username) {
             XHR.open("GET", `${url}${username}`);
 
             XHR.onload = () => resolve( new Response (XHR.response) );
-            XHR.onerror = () => reject('Could not fetch data!!');
+            XHR.onerror = () => reject( new Error('Error occured') );
 
             XHR.send();
         }
@@ -57,7 +42,8 @@ function searchUser (event) {
     } else {
         fetchUser(USERNAME.value)
         .then( res => res.json() )
-        .then( data => drawUser(data));
+        .then( data => drawUser(data))
+        .catch( err => console.error(err) );
         fetchUserInfo(USERNAME.value);
         USERNAME.value = '';
     }
