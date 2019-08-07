@@ -1,52 +1,53 @@
-const SEARCH = document.querySelector('input[type="submit"]');
-const USERNAME = document.querySelector('#user-input');
-const url = 'https://api.github.com/users/';
-const AVATAR = document.querySelector('.avatar img');
-const NAME = document.querySelector('.avatar p');
-const USR = document.querySelector('#username');
-const FOLLOW = document.querySelector('#followers');
-const REPOS = document.querySelector('#repos');
-const SEARCHBAR = document.querySelector('.search-profile');
+// just for fun, let's make an alias for document.querySelector:
+const get = element => document.querySelector(element);
+// we can organize these if we want...
+// plus, prepending "ELEMENTS" to the variable name clarifies what they are
+const ELEMENTS = {
+  SEARCH: get('input[type="submit"]'),
+  USERNAME: get('#user-input'),
+  AVATAR: get('.avatar img'),
+  NAME: get('.avatar p'),
+  USR: get('#username'),
+  FOLLOW: get('#followers'),
+  REPOS: get('#repos'),
+  SEARCHBAR: get('.search-profile'),
+  CONTAINER: get('.user-container'),
+};
+
 // Hide the container class of user
-const CONTAINER = document.querySelector('.user-container');
-CONTAINER.style.visibility = 'hidden';
+// we should set default styles in the CSS,
+// so we don't get a layout flicker when the JS loads
 
-function drawUser (user) {
-    AVATAR.src = user.avatar_url;
-    NAME.textContent = user.name;
-    USR.textContent = user.login;
-    FOLLOW.textContent = user.followers + ' followers';
-    REPOS.textContent = user.public_repos + ' repos';
+function drawUser(user) {
+  ELEMENTS.AVATAR.src = user.avatar_url;
+  ELEMENTS.NAME.textContent = user.name;
+  ELEMENTS.USR.textContent = user.login;
+  ELEMENTS.FOLLOW.textContent = user.followers + ' followers';
+  ELEMENTS.REPOS.textContent = user.public_repos + ' repos';
 
-    CONTAINER.style.visibility = 'visible';
+  // instead of directly modifying styles, it's more convenient/flexible to modify classes
+  ELEMENTS.CONTAINER.classList.remove('hidden');
 }
 
-function fetchUser (username) {
-    return new Promise(
-        (resolve, reject) => {
-            const XHR = new XMLHttpRequest();
-
-            XHR.open("GET", `${url}${username}`);
-
-            XHR.onload = () => resolve( new Response (XHR.response) );
-            XHR.onerror = () => reject( new Error('Error occured') );
-
-            XHR.send();
-        }
-    );
+// group related things together (easier to read)
+const url = 'https://api.github.com/users/';
+function fetchUser(username) {
+  // you can also use the more recent fetch API:
+  // (looks like you did that in info.js)
+  return fetch(`${url}${username}`);
 }
 
-function searchUser (event) {
-    if (!USERNAME.value) {
-        alert('Username can\'t be empty!!');
-    } else {
-        fetchUser(USERNAME.value)
-        .then( res => res.json() )
-        .then( data => drawUser(data))
-        .catch( err => console.error(err) );
-        fetchUserInfo(USERNAME.value);
-        USERNAME.value = '';
-    }
+function searchUser(event) {
+  if (!ELEMENTS.USERNAME.value) {
+    alert("Username can't be empty!!");
+  } else {
+    fetchUser(ELEMENTS.USERNAME.value)
+      .then(res => res.json())
+      .then(data => drawUser(data))
+      .catch(err => console.error(err));
+    fetchUserInfo(ELEMENTS.USERNAME.value);
+    ELEMENTS.USERNAME.value = '';
+  }
 }
 
-SEARCH.addEventListener('click', searchUser);
+ELEMENTS.SEARCH.addEventListener('click', searchUser);
