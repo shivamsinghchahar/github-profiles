@@ -1,95 +1,95 @@
 .user-container {
-    grid-template-columns: 1fr 3fr;
-    grid-column-gap: 2.5rem;
+  grid-template-columns: 1fr 3fr;
+  grid-column-gap: 2.5rem;
 }
 
 .search-profile {
-    margin-bottom: 1.5rem;
-    form {
-        @include border-radius(0.5rem);
-        display: flex;
-        background: white;
-        border: 0.25rem solid white;
-        box-shadow: $shadow;
-    }
-}
-
-input[type="text"] {
-    @include border-radius(0.25rem);
-    font-family: $imprima;
-    font-size: 1.5rem;
-    padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  form {
+    @include border-radius(0.5rem);
+    display: flex;
+    background: white;
+    border: 0.25rem solid white;
     box-shadow: $shadow;
-    &::-webkit-input-placeholder {
-        font-family: $imprima;
-    }
+  }
 }
 
-input[type="text"]:focus {
-    outline: 0.25rem solid rgba($darkGold, 0.7);
+input[type='text'] {
+  @include border-radius(0.25rem);
+  font-family: $imprima;
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  box-shadow: $shadow;
+  &::-webkit-input-placeholder {
+    font-family: $imprima;
+  }
 }
 
-input[type="submit"] {
-    @include border-radius(0.25rem);
-    background: $smoke;
-    color: white;
-    font-size: 1.25rem;
-    padding: 0 1.5rem;
-    &:hover {
-        background: $black;
-    }
+input[type='text']:focus {
+  outline: 0.25rem solid rgba($darkGold, 0.7);
+}
+
+input[type='submit'] {
+  @include border-radius(0.25rem);
+  background: $smoke;
+  color: white;
+  font-size: 1.25rem;
+  padding: 0 1.5rem;
+  &:hover {
+    background: $black;
+  }
 }
 
 // User view
 
 .avatar {
-    color: white;
-    box-shadow: $shadow;
-    img {
-        border: 0.25rem solid white;
-        @include border-radius(0.25rem);
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-    
-    .name {
-        background: $darkGold;
-        padding: 0.5rem;
-        text-align: center;
-        font-weight: bold;
-        border-bottom-right-radius: 0.25rem;
-        border-bottom-left-radius: 0.25rem;
-    }
+  color: white;
+  box-shadow: $shadow;
+  img {
+    border: 0.25rem solid white;
+    @include border-radius(0.25rem);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .name {
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
 }
 
 .info {
-    color: white;
-    font-size: 1.25rem;
+  color: white;
+  font-size: 1.25rem;
 }
 
 .user-repos {
-    li {
-        @include border-radius(0.25rem);
-        border: 0.25rem solid white;
-        padding: 0.5rem;
-        box-shadow: $shadow;
-        color: white;
-    }
+  li {
+    @include border-radius(0.25rem);
+    border: 0.25rem solid white;
+    padding: 0.5rem;
+    box-shadow: $shadow;
+    color: white;
+  }
 }
 
 .repo-title {
-    font-size: 1rem;
-    padding-bottom: 0.25rem;
+  font-size: 1rem;
+  padding-bottom: 0.25rem;
 }
 
-.stars, .forks {
-    padding: 0 1rem 0 0;
-    i {
-        color: $darkGold;
-    }
+.stars,
+.forks {
+  padding: 0 1rem 0 0;
+  i {
+    color: $darkGold;
+  }
 }
 
 .repo-description {
-    padding-top: 0.25rem;
-    font-size: 0.8rem;
+  padding-top: 0.25rem;
+  font-size: 0.8rem;
 }
